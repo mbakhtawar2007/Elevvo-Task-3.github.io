@@ -1,0 +1,175 @@
+/* ========== GLOBAL RESET & BASE ========== */
+:root {
+  --brand: #2563eb;
+  --brand-light: #60a5fa;
+  --brand-dark: #1d4ed8;
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --muted: #64748b;
+  --radius: 16px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+}
+
+/* ========== CONTAINERS & LAYOUT ========== */
+.container {
+  width: min(1120px, 92%);
+  margin-inline: auto;
+}
+.section {
+  padding: 80px 0;
+}
+.cards {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ========== TYPOGRAPHY ========== */
+.h1 {
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.lead {
+  color: var(--muted);
+  font-size: clamp(16px, 2.5vw, 18px);
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+}
+
+/* ========== CARDS ========== */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Price */
+.price {
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--brand-dark);
+}
+.badge {
+  background: var(--brand-light);
+  color: white;
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* ========== TASK GRID UI ========== */
+.task-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.input,
+.select {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius);
+  background: #fff;
+  min-width: 180px;
+  font-size: 0.9rem;
+}
+.task h4 {
+  margin: 0.3rem 0;
+}
+.task small {
+  color: var(--muted);
+}
+.tag {
+  font-size: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  background: #f1f5f9;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: var(--text);
+  color: #cbd5e1;
+  padding: 48px 0;
+}
+.footer a {
+  color: var(--brand-light);
+  transition: color 0.25s;
+}
+.footer a:hover {
+  color: white;
+}
+
+/* ========== HERO SECTION ========== */
+.hero-bg {
+  background: linear-gradient(145deg, var(--brand-light), #93c5fd);
+  padding: 100px 20px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.hero-bg .h1 {
+  color: white;
+}
+.hero-bg .lead {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ========== FADE-IN ANIMATION ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.7s ease forwards;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
